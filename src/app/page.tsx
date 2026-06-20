@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState, useRef } from "react";
 import Link from "next/link";
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Brain, Globe, Compass, Code, Sparkles, Zap, Star, ChevronDown } from "lucide-react";
 import { servicesData } from "@/lib/data";
 import { PageWrapper } from "@/components/shared/page-wrapper";
@@ -65,9 +65,6 @@ function TechPill({ name, delay }: { name: string; delay: number }) {
 
 export default function HomePage() {
   const { settings, projects } = useTheme();
-  const { scrollY } = useScroll();
-  const heroOpacity = useTransform(scrollY, [0, 400], [1, 0]);
-  const heroY = useTransform(scrollY, [0, 400], [0, -80]);
 
   const typewriterWords = ["Landing Pages", "SaaS Products", "AI Agents", "Mobile Apps", "Web Platforms"];
   const techStack = ["Next.js", "React", "TypeScript", "Python", "Figma", "LangChain", "Tailwind", "Vercel", "Node.js", "Firebase"];
@@ -104,7 +101,7 @@ export default function HomePage() {
           <div className="absolute w-[1000px] h-[1000px] rounded-full animate-spin-medium" style={{ border: "1px solid rgba(6,182,212,0.04)" }} />
         </div>
 
-        <motion.div style={{ opacity: heroOpacity, y: heroY }}
+        <motion.div
           className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 text-center flex flex-col items-center pt-24 pb-12 md:pt-32 md:pb-20">
           {/* Badge */}
           <motion.div initial={{ opacity: 0, y: -20, scale: 0.9 }} animate={{ opacity: 1, y: 0, scale: 1 }}
