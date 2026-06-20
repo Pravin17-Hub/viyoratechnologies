@@ -89,7 +89,7 @@ export default function HomePage() {
   return (
     <PageWrapper>
       {/* ══ HERO ══ */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden hero-grid">
+      <section className="relative min-h-[80vh] md:min-h-screen flex items-center justify-center overflow-hidden hero-grid">
         <div className="absolute inset-0 z-0" style={{ background: "var(--bg-base)" }} />
         {/* Orbs */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
@@ -105,7 +105,7 @@ export default function HomePage() {
         </div>
 
         <motion.div style={{ opacity: heroOpacity, y: heroY }}
-          className="relative z-10 max-w-7xl mx-auto px-6 text-center flex flex-col items-center pt-32 pb-20">
+          className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 text-center flex flex-col items-center pt-24 pb-12 md:pt-32 md:pb-20">
           {/* Badge */}
           <motion.div initial={{ opacity: 0, y: -20, scale: 0.9 }} animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.6, type: "spring" }}
@@ -154,19 +154,19 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.6 }}
-            className="flex flex-wrap justify-center gap-4 mt-16 w-full max-w-4xl"
+            className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-6 mt-10 md:mt-16 w-full max-w-4xl px-2 sm:px-0"
           >
             {stats.map((stat, i) => (
               <div
                 key={stat.label}
-                className="relative group p-6 rounded-3xl border overflow-hidden flex flex-col items-center text-center w-[200px] sm:w-[240px] md:w-[260px] transition-all duration-300 hover:border-violet-500/30"
+                className="relative group p-3 sm:p-5 md:p-6 rounded-2xl md:rounded-3xl border overflow-hidden flex flex-col items-center text-center w-full transition-all duration-300 hover:border-violet-500/30"
                 style={{ background: "var(--bg-card)", borderColor: "var(--border-card)" }}
               >
-                <div className="text-3xl mb-2">{stat.icon}</div>
-                <div className="text-3xl sm:text-4xl font-black text-shimmer">
+                <div className="text-xl sm:text-2xl md:text-3xl mb-1 sm:mb-2">{stat.icon}</div>
+                <div className="text-xl sm:text-3xl md:text-4xl font-black text-shimmer">
                   <CountUp end={stat.end} suffix={stat.suffix} />
                 </div>
-                <div className="text-[10px] sm:text-xs font-bold uppercase tracking-widest mt-2" style={{ color: "var(--text-muted)" }}>
+                <div className="text-[8px] sm:text-[10px] md:text-xs font-bold uppercase tracking-widest mt-1 sm:mt-2" style={{ color: "var(--text-muted)" }}>
                   {stat.label}
                 </div>
               </div>
@@ -176,14 +176,14 @@ export default function HomePage() {
       </section>
 
       {/* ══ SERVICES ══ */}
-      <section className="py-24 relative z-10 overflow-hidden">
+      <section className="py-12 md:py-24 relative z-10 overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full blur-[150px] pointer-events-none" style={{ background: `rgba(139,92,246,calc(var(--orb-opacity)*0.3))` }} />
         <div className="max-w-7xl mx-auto px-6">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-            className="flex flex-col md:flex-row md:items-end justify-between mb-16">
+            className="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-16">
             <div>
-              <p className="text-violet-500 text-xs font-bold uppercase tracking-widest mb-3">Capabilities</p>
-              <h2 className="text-4xl sm:text-5xl font-black leading-tight" style={{ color: "var(--text-primary)" }}>What We <span className="text-shimmer">Build</span></h2>
+              <p className="text-violet-500 text-[10px] sm:text-xs font-bold uppercase tracking-widest mb-2 sm:mb-3">Capabilities</p>
+              <h2 className="text-3xl sm:text-5xl font-black leading-tight" style={{ color: "var(--text-primary)" }}>What We <span className="text-shimmer">Build</span></h2>
             </div>
             <Link href="/services">
               <button className="mt-6 md:mt-0 group flex items-center gap-2 px-5 py-2.5 rounded-xl border text-sm font-semibold hover:text-violet-500 transition-all"
@@ -202,7 +202,7 @@ export default function HomePage() {
                   initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                   transition={{ delay: idx * 0.15, duration: 0.6, type: "spring" }}
                   whileHover={{ y: -8, scale: 1.02 }}
-                  className="group relative p-8 rounded-3xl border overflow-hidden cursor-default transition-all duration-400"
+                  className="group relative p-6 sm:p-8 rounded-3xl border overflow-hidden cursor-default transition-all duration-400"
                   style={{ background: "var(--bg-card)", borderColor: "var(--border-card)" }}
                   onMouseEnter={e => { (e.currentTarget as HTMLElement).style.boxShadow = `0 20px 60px ${color.glow}`; (e.currentTarget as HTMLElement).style.borderColor = `${color.from}30`; }}
                   onMouseLeave={e => { (e.currentTarget as HTMLElement).style.boxShadow = "none"; (e.currentTarget as HTMLElement).style.borderColor = ""; }}>
