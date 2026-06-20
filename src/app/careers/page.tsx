@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { PageWrapper } from "@/components/shared/page-wrapper";
 import { Send, CheckCircle2, User, Mail, Phone, Code, Link2, Sparkles, Star } from "lucide-react";
+import { dbSaveApplication } from "@/lib/firebase";
 
 const perks = [
   { icon: "🚀", title: "Real Products",     text: "Work on actual products used by real people — not just college assignments." },
@@ -27,21 +28,20 @@ export default function CareersPage() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault(); setError("");
     if (!formData.name || !formData.email || !formData.mobile || !formData.skills || !formData.projects) { setError("Please fill out all fields."); return; }
     if (!/\S+@\S+\.\S+/.test(formData.email)) { setError("Please enter a valid email address."); return; }
     setIsSubmitting(true);
-    setTimeout(() => {
-      try {
-        const apps = JSON.parse(localStorage.getItem("job_applications") || "[]");
-        apps.push({ id: Date.now().toString(), ...formData, appliedAt: new Date().toISOString() });
-        localStorage.setItem("job_applications", JSON.stringify(apps));
-        setIsSuccess(true);
-        setFormData({ name: "", email: "", mobile: "", skills: "", projects: "" });
-      } catch { setError("Failed to submit. Please try again."); }
-      finally   { setIsSubmitting(false); }
-    }, 1500);
+    try {
+      await dbSaveApplication(formData);
+      setIsSuccess(true);
+      setFormData({ name: "", email: "", mobile: "", skills: "", projects: "" });
+    } catch {
+      setError("Failed to submit. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const inputClass = `w-full border rounded-2xl py-3.5 px-4 text-sm focus:outline-none input-glow transition-all duration-300`;

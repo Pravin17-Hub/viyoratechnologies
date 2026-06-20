@@ -6,6 +6,7 @@ import { PageWrapper } from "@/components/shared/page-wrapper";
 import { Reveal } from "@/components/shared/reveal";
 import { useTheme } from "@/context/theme-context";
 import { Mail, Phone, ChevronDown, CheckCircle, ArrowRight, Clock, MessageSquare, Sparkles } from "lucide-react";
+import { dbSaveMessage } from "@/lib/firebase";
 
 function FAQItem({ question, answer }: { question: string; answer: string }) {
   const [open, setOpen] = useState(false);
@@ -44,7 +45,7 @@ export default function ContactPage() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const errs: Record<string, string> = {};
     if (!form.name.trim())    errs.name    = "Full name is required.";
@@ -53,9 +54,7 @@ export default function ContactPage() {
     if (!form.subject.trim()) errs.subject = "Subject is required.";
     if (!form.message.trim()) errs.message = "Message is required.";
     if (Object.keys(errs).length > 0) { setErrors(errs); return; }
-    const msgs = JSON.parse(localStorage.getItem("contact_messages") || "[]");
-    msgs.push({ id: Date.now().toString(), ...form, createdAt: new Date().toISOString() });
-    localStorage.setItem("contact_messages", JSON.stringify(msgs));
+    await dbSaveMessage(form);
     setSubmitted(true); setErrors({});
   };
 

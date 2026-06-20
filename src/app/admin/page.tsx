@@ -7,6 +7,7 @@ import {
   Mail, Phone, FileText, Trash2, CheckCircle, Globe, Shield, Sparkles
 } from "lucide-react";
 import { useTheme } from "@/context/theme-context";
+import { dbGetApplications, dbGetMessages, dbDeleteApplication, dbDeleteMessage } from "@/lib/firebase";
 
 /* ─────────────── Types ─────────────── */
 interface Application { id: string; name: string; email: string; mobile: string; skills: string; projects: string; appliedAt: string; }
@@ -119,8 +120,13 @@ export default function AdminPage() {
   /* Load data after login */
   useEffect(() => {
     if (!isLoggedIn) return;
-    setApplications(JSON.parse(localStorage.getItem("job_applications") || "[]").reverse());
-    setMessages(JSON.parse(localStorage.getItem("contact_messages") || "[]").reverse());
+    const loadData = async () => {
+      const apps = await dbGetApplications();
+      const msgs = await dbGetMessages();
+      setApplications(apps);
+      setMessages(msgs);
+    };
+    loadData();
     setEditPhone(settings.phone);
     setEditEmail(settings.email);
     setEditAnnouncement(settings.announcement);
@@ -154,16 +160,16 @@ export default function AdminPage() {
     setTimeout(() => setSettingsOk(false), 3000);
   };
 
-  const deleteApp = (id: string) => {
+  const deleteApp = async (id: string) => {
+    await dbDeleteApplication(id);
     const updated = applications.filter(a => a.id !== id);
     setApplications(updated);
-    localStorage.setItem("job_applications", JSON.stringify([...updated].reverse()));
   };
 
-  const deleteMsg = (id: string) => {
+  const deleteMsg = async (id: string) => {
+    await dbDeleteMessage(id);
     const updated = messages.filter(m => m.id !== id);
     setMessages(updated);
-    localStorage.setItem("contact_messages", JSON.stringify([...updated].reverse()));
   };
 
   /* ── Input base class ── */
