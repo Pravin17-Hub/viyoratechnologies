@@ -4,7 +4,6 @@ import "./globals.css";
 import { ThemeProvider } from "@/context/theme-context";
 import { Navbar } from "@/components/shared/navbar";
 import { Footer } from "@/components/shared/footer";
-import { Chatbot } from "@/components/shared/chatbot";
 import { ParticlesBackground } from "@/components/shared/particles";
 import { CustomCursor } from "@/components/shared/custom-cursor";
 
@@ -56,9 +55,6 @@ export default function RootLayout({
           <main className="flex-grow flex flex-col relative z-10 w-full">
             {children}
           </main>
-
-          {/* AI Chatbot */}
-          <Chatbot />
 
           {/* Footer */}
           <Footer />

@@ -226,8 +226,6 @@ export default function HomePage() {
         </div>
       </section>
 
-// Projects section removed from homepage
-
       {/* ══ CTA ══ */}
       <section className="py-28 relative z-10 overflow-hidden">
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">

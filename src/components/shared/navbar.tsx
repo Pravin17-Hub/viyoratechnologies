@@ -116,11 +116,6 @@ export function Navbar() {
 
           {/* Right actions */}
           <div className="hidden lg:flex items-center gap-3">
-            <Link href="/contact">
-              <button className="px-5 py-2.5 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-violet-600 to-blue-600 shadow-lg shadow-violet-500/25 hover:shadow-violet-500/40 hover:scale-105 active:scale-95 transition-all duration-300">
-                Get In Touch
-              </button>
-            </Link>
           </div>
 
           {/* Mobile hamburger */}
@@ -181,13 +176,6 @@ export function Navbar() {
                   </motion.div>
                 );
               })}
-              <div className="pt-4 mt-2 border-t" style={{ borderColor: "var(--border-subtle)" }}>
-                <Link href="/contact" className="block w-full">
-                  <button className="w-full py-3 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-violet-600 to-blue-600 shadow-lg shadow-violet-500/20">
-                    Get In Touch
-                  </button>
-                </Link>
-              </div>
             </div>
           </motion.div>
         )}
