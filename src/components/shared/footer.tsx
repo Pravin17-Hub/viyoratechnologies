@@ -11,6 +11,7 @@ const quickLinks = [
   { href: "/services", label: "Our Services" },
   { href: "/careers", label: "Careers (Join Us)" },
   { href: "/contact", label: "Contact Us" },
+  { href: "/admin", label: "Admin Console" },
 ];
 
 export function Footer() {
