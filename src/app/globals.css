@@ -28,16 +28,16 @@
 
 /* ── Palette: Ochre Gold, Dusty Rose, Beige, Warm Off-white, Dark Brown ── */
 :root {
-  --bg-base:         #FFFFFF; /* White as primary background color */
+  --bg-base:         #DED1BD; /* Beige as solid primary background (a little bit darker than white) */
   --bg-surface:      #FAF6F2; /* Warm Cream Surface */
   --bg-card:         #FAF6F2; /* Warm Cream Card */
-  --bg-card-hover:   #f5eee6;
-  --border-card:     #DED1BD; /* Beige Border */
+  --bg-card-hover:   #faf8f5;
+  --border-card:     #FAF6F2; /* Cream Border */
   --border-subtle:   #B08401; /* Ochre Gold */
-  --text-primary:    #683B2B; /* Dark Brown for high readability on white */
+  --text-primary:    #683B2B; /* Dark Brown for primary text */
   --text-secondary:  #B08401; /* Ochre Gold Accent */
   --text-muted:      #683B2B;
-  --navbar-bg:       rgba(255, 255, 255, 0.95);
+  --navbar-bg:       rgba(222, 209, 189, 0.95); /* Beige Navbar */
   --footer-bg:       #FAF6F2;
   --input-bg:        #FFFFFF;
   --input-border:    #DED1BD;
@@ -46,16 +46,16 @@
 }
 
 .dark {
-  --bg-base:         #FFFFFF;
+  --bg-base:         #DED1BD;
   --bg-surface:      #FAF6F2;
   --bg-card:         #FAF6F2;
-  --bg-card-hover:   #f5eee6;
-  --border-card:     #DED1BD;
+  --bg-card-hover:   #faf8f5;
+  --border-card:     #FAF6F2;
   --border-subtle:   #B08401;
   --text-primary:    #683B2B;
   --text-secondary:  #B08401;
   --text-muted:      #683B2B;
-  --navbar-bg:       rgba(255, 255, 255, 0.95);
+  --navbar-bg:       rgba(222, 209, 189, 0.95);
   --footer-bg:       #FAF6F2;
   --input-bg:        #FFFFFF;
   --input-border:    #DED1BD;
