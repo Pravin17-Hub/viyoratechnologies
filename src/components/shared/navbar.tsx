@@ -35,17 +35,9 @@ export function Navbar() {
   useEffect(() => { setIsMobileMenuOpen(false); }, [pathname]);
 
   /* Nav link color depends on theme AND scroll state */
-  const linkColor = isScrolled
-    ? "var(--text-secondary)"
-    : theme === "dark"
-    ? "rgba(255,255,255,0.7)"
-    : "#d6d3d1"; 
+  const linkColor = "var(--text-primary)"; 
 
-  const logoTextColor = isScrolled
-    ? "var(--text-primary)"
-    : theme === "dark"
-    ? "#ffffff"
-    : "#fafaf9";
+  const logoTextColor = "var(--text-primary)";
 
   return (
     <header

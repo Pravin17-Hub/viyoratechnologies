@@ -28,38 +28,38 @@
 
 /* ── Palette: Ochre Gold, Dusty Rose, Beige, Warm Off-white, Dark Brown ── */
 :root {
-  --bg-base:         #683B2B; /* Solid Dark Brown Base */
-  --bg-surface:      #542e21; /* Warm Brown Surface */
-  --bg-card:         #542e21; /* Warm Brown Card */
-  --bg-card-hover:   #5f3425;
+  --bg-base:         #FFFFFF; /* White as primary background color */
+  --bg-surface:      #FAF6F2; /* Warm Cream Surface */
+  --bg-card:         #FAF6F2; /* Warm Cream Card */
+  --bg-card-hover:   #f5eee6;
   --border-card:     #DED1BD; /* Beige Border */
   --border-subtle:   #B08401; /* Ochre Gold */
-  --text-primary:    #FAF6F2; /* Warm Off-white */
-  --text-secondary:  #B08401; /* Ochre Gold */
-  --text-muted:      #FAF6F2; /* Warm Off-white */
-  --navbar-bg:       #683B2B;
-  --footer-bg:       #542e21;
-  --input-bg:        #542e21;
-  --input-border:    #B08401;
-  --tab-bg:          #542e21;
+  --text-primary:    #683B2B; /* Dark Brown for high readability on white */
+  --text-secondary:  #B08401; /* Ochre Gold Accent */
+  --text-muted:      #683B2B;
+  --navbar-bg:       rgba(255, 255, 255, 0.95);
+  --footer-bg:       #FAF6F2;
+  --input-bg:        #FFFFFF;
+  --input-border:    #DED1BD;
+  --tab-bg:          #FAF6F2;
   --orb-opacity:     0; /* Disable gradients / glow combinations */
 }
 
 .dark {
-  --bg-base:         #683B2B;
-  --bg-surface:      #542e21;
-  --bg-card:         #542e21;
-  --bg-card-hover:   #5f3425;
+  --bg-base:         #FFFFFF;
+  --bg-surface:      #FAF6F2;
+  --bg-card:         #FAF6F2;
+  --bg-card-hover:   #f5eee6;
   --border-card:     #DED1BD;
   --border-subtle:   #B08401;
-  --text-primary:    #FAF6F2;
+  --text-primary:    #683B2B;
   --text-secondary:  #B08401;
-  --text-muted:      #FAF6F2;
-  --navbar-bg:       #683B2B;
-  --footer-bg:       #542e21;
-  --input-bg:        #542e21;
-  --input-border:    #B08401;
-  --tab-bg:          #542e21;
+  --text-muted:      #683B2B;
+  --navbar-bg:       rgba(255, 255, 255, 0.95);
+  --footer-bg:       #FAF6F2;
+  --input-bg:        #FFFFFF;
+  --input-border:    #DED1BD;
+  --tab-bg:          #FAF6F2;
   --orb-opacity:     0;
 }
 
