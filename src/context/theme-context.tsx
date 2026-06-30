@@ -11,6 +11,7 @@ export interface Project {
   description: string;
   link: string;
   techUsed: string[];
+  image?: string;
 }
 
 interface SiteSettings {
@@ -58,12 +59,22 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       announcement: savedAnnouncement || "Viyora Technologies · Product Studio"
     });
 
-    // Projects sync
+    // Projects sync with auto-upgrade to include MAK project
     const savedProjects = localStorage.getItem("viyora_projects");
-    if (savedProjects) {
-      setProjects(JSON.parse(savedProjects));
-    } else {
+    let loadedProjects = savedProjects ? JSON.parse(savedProjects) : [];
+    const hasMak = loadedProjects.some((p: any) => p.id === "mak");
+
+    if (!savedProjects || !hasMak) {
       const initialProjects: Project[] = [
+        {
+          id: "mak",
+          title: "MAK Ladies Tailoring",
+          category: "Bespoke Tailoring & Design",
+          description: "A premium digital experience featuring high-end bespoke ladies' tailoring, intricate Aari & Zardosi embroidery showcases, interactive catalogs, and online bookings.",
+          link: "https://mak-pied.vercel.app/",
+          techUsed: ["React", "Next.js", "Framer Motion", "Tailwind CSS"],
+          image: "/mak-project.png"
+        },
         {
           id: "1",
           title: "Aesthetic Portfolio & Brand Launch",
@@ -83,6 +94,8 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       ];
       setProjects(initialProjects);
       localStorage.setItem("viyora_projects", JSON.stringify(initialProjects));
+    } else {
+      setProjects(loadedProjects);
     }
     
     setMounted(true);

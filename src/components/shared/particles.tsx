@@ -38,13 +38,11 @@ export function ParticlesBackground() {
         this.speedX = Math.random() * 0.4 - 0.2;
         this.speedY = Math.random() * 0.4 - 0.2;
         const colors = [
-          "rgba(139, 92, 246, " + (Math.random() * 0.25 + 0.05) + ")",
-          "rgba(59, 130, 246, " + (Math.random() * 0.2 + 0.05) + ")",
-          "rgba(6, 182, 212, " + (Math.random() * 0.15 + 0.05) + ")",
+          "rgba(251, 191, 36, " + (Math.random() * 0.25 + 0.05) + ")", // Gold
+          "rgba(217, 119, 6, " + (Math.random() * 0.2 + 0.05) + ")",   // Amber
+          "rgba(112, 26, 117, " + (Math.random() * 0.2 + 0.05) + ")",  // Plum
         ];
-        this.color = theme === "dark"
-          ? colors[Math.floor(Math.random() * colors.length)]
-          : "rgba(139, 92, 246, " + (Math.random() * 0.08 + 0.02) + ")";
+        this.color = colors[Math.floor(Math.random() * colors.length)];
       }
 
       update() {
