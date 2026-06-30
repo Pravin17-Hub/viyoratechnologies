@@ -9,9 +9,9 @@ import { Brain, Globe, Compass, Code, Check, ChevronRight, ArrowRight, Server, D
 import Link from "next/link";
 
 const serviceColors = [
-  { primary: "#fbbf24", secondary: "#d97706", glow: "rgba(251,191,36,0.15)" },
-  { primary: "#701a75", secondary: "#fbbf24", glow: "rgba(112,26,117,0.15)" },
-  { primary: "#fbbf24", secondary: "#701a75", glow: "rgba(251,191,36,0.12)" },
+  { primary: "#FFC72C", secondary: "#4a0e17", glow: "rgba(255, 199, 44, 0.15)" },
+  { primary: "#9b1c2e", secondary: "#FFD700", glow: "rgba(155, 28, 46, 0.15)" },
+  { primary: "#FFC72C", secondary: "#9b1c2e", glow: "rgba(255, 199, 44, 0.12)" },
 ];
 const serviceIcons: Record<string, React.ReactNode> = {
   Brain: <Brain className="w-7 h-7" />, Globe: <Globe className="w-7 h-7" />,
@@ -54,13 +54,13 @@ export default function ServicesPage() {
       {/* ══ HERO ══ */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 right-1/4 w-[500px] h-[500px] rounded-full blur-[150px]" style={{ background: `rgba(217,119,6,var(--orb-opacity))` }} />
-          <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] rounded-full blur-[120px]" style={{ background: `rgba(112,26,117,calc(var(--orb-opacity)*0.7))` }} />
+          <div className="absolute top-0 right-1/4 w-[500px] h-[500px] rounded-full blur-[150px]" style={{ background: `rgba(255, 199, 44, var(--orb-opacity))` }} />
+          <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] rounded-full blur-[120px]" style={{ background: `rgba(74, 14, 23, calc(var(--orb-opacity)*0.7))` }} />
         </div>
         <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
           <motion.span initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full border text-xs font-bold tracking-wider"
-            style={{ borderColor: "rgba(217,119,6,0.3)", background: "rgba(217,119,6,0.1)", color: "#fbbf24" }}>
+            style={{ borderColor: "rgba(255, 199, 44, 0.3)", background: "rgba(255, 199, 44, 0.08)", color: "#FFC72C" }}>
             <Zap className="w-3.5 h-3.5" />What We Do
           </motion.span>
           <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
@@ -130,7 +130,7 @@ export default function ServicesPage() {
                     <button key={s.id} onClick={() => setActiveId(s.id)}
                       className={`w-full flex items-center justify-between text-left px-4 py-3.5 rounded-2xl text-sm font-bold transition-all ${isActive ? "text-black" : ""}`}
                       style={isActive
-                        ? { background: "linear-gradient(to right, #fbbf24, #d97706)", color: "black" }
+                        ? { background: "linear-gradient(to right, #FFC72C, #4a0e17)", color: "white" }
                         : { color: "var(--text-secondary)", background: "transparent" }}>
                       <span className="flex items-center gap-3">
                         <span style={{ color: isActive ? "black" : "var(--text-muted)" }}>{serviceIcons[s.icon]}</span>
@@ -156,8 +156,8 @@ export default function ServicesPage() {
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         {active.features.map(feat => (
                           <div key={feat} className="flex items-center gap-2.5 text-sm font-medium" style={{ color: "var(--text-secondary)" }}>
-                            <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(217,119,6,0.15)", border: "1px solid rgba(217,119,6,0.2)" }}>
-                              <Check className="w-3 h-3 text-amber-500" />
+                            <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(255, 199, 44, 0.15)", border: "1px solid rgba(255, 199, 44, 0.2)" }}>
+                              <Check className="w-3 h-3 text-yellow-500" />
                             </div>
                             {feat}
                           </div>
@@ -172,7 +172,7 @@ export default function ServicesPage() {
                           <React.Fragment key={step.name}>
                             <div className="flex flex-col items-center gap-2 min-w-max">
                               <div className="w-10 h-10 rounded-xl flex items-center justify-center border"
-                                style={{ background: "rgba(217,119,6,0.1)", borderColor: "rgba(217,119,6,0.2)", color: "#fbbf24" }}>{step.icon}</div>
+                                style={{ background: "rgba(255, 199, 44, 0.1)", borderColor: "rgba(255, 199, 44, 0.2)", color: "#FFC72C" }}>{step.icon}</div>
                               <span className="text-[10px] font-bold" style={{ color: "var(--text-muted)" }}>{step.name}</span>
                             </div>
                             {idx < flow.length - 1 && <ArrowRight className="w-4 h-4 hidden sm:block flex-shrink-0" style={{ color: "var(--border-subtle)" }} />}
@@ -183,7 +183,7 @@ export default function ServicesPage() {
                     <div className="pt-4 border-t flex flex-col sm:flex-row items-center justify-between gap-4" style={{ borderColor: "var(--border-subtle)" }}>
                       <span className="text-xs font-medium" style={{ color: "var(--text-muted)" }}>Have a specific project requirement?</span>
                       <Link href="/contact">
-                        <button className="group flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold text-black bg-gradient-to-r from-yellow-500 to-amber-500 shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40 hover:scale-105 active:scale-95 transition-all duration-300">
+                        <button className="group flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold text-black bg-gradient-to-r from-yellow-500 to-yellow-600 shadow-lg shadow-yellow-500/25 hover:shadow-yellow-500/40 hover:scale-105 active:scale-95 transition-all duration-300">
                           Discuss Project <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </button>
                       </Link>
@@ -199,7 +199,7 @@ export default function ServicesPage() {
       {/* ══ CTA ══ */}
       <section className="py-24 relative z-10 text-center overflow-hidden border-t" style={{ borderColor: "var(--border-subtle)" }}>
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div className="w-[500px] h-[500px] rounded-full blur-[130px] animate-pulse-glow" style={{ background: `rgba(217,119,6,var(--orb-opacity))` }} />
+          <div className="w-[500px] h-[500px] rounded-full blur-[130px] animate-pulse-glow" style={{ background: `rgba(255, 199, 44, var(--orb-opacity))` }} />
         </div>
         <div className="max-w-3xl mx-auto px-6 relative z-10">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, type: "spring" }}>
@@ -208,7 +208,7 @@ export default function ServicesPage() {
             </h3>
             <p className="mb-10" style={{ color: "var(--text-secondary)" }}>Reach out and let's discuss how we can build it together.</p>
             <Link href="/contact">
-              <button className="group px-10 py-4 rounded-2xl font-bold text-black text-sm bg-gradient-to-r from-yellow-500 to-amber-500 shadow-xl shadow-amber-500/30 hover:shadow-amber-500/50 hover:scale-105 active:scale-95 transition-all duration-300">
+              <button className="group px-10 py-4 rounded-2xl font-bold text-white text-sm bg-stone-950 hover:bg-stone-900 shadow-xl shadow-stone-950/10 hover:scale-105 active:scale-95 transition-all duration-300">
                 <span className="flex items-center gap-2">Start a Project <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" /></span>
               </button>
             </Link>

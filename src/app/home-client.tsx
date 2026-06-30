@@ -57,9 +57,9 @@ export default function HomePage() {
   const typewriterWords = ["Bespoke Designs", "SaaS Products", "Tailored Web Apps", "Brand Portfolios", "Creative Studios"];
 
   const serviceColors = [
-    { from: "#fbbf24", to: "#d97706", glow: "rgba(251,191,36,0.15)" },
-    { from: "#701a75", to: "#d97706", glow: "rgba(112,26,117,0.15)" },
-    { from: "#fbbf24", to: "#701a75", glow: "rgba(251,191,36,0.12)" },
+    { from: "#FFC72C", to: "#4a0e17", glow: "rgba(255, 199, 44, 0.15)" },
+    { from: "#9b1c2e", to: "#FFD700", glow: "rgba(155, 28, 46, 0.15)" },
+    { from: "#FFC72C", to: "#9b1c2e", glow: "rgba(255, 199, 44, 0.12)" },
   ];
   const icons = {
     Brain: <Brain className="w-7 h-7" />, Globe: <Globe className="w-7 h-7" />, Compass: <Compass className="w-7 h-7" />,
@@ -78,13 +78,13 @@ export default function HomePage() {
         <GoogleFlow />
 
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-          <div className="absolute top-[15%] left-[8%] w-[500px] h-[500px] rounded-full blur-[120px] animate-mesh-1" style={{ background: `rgba(217,119,6,var(--orb-opacity))` }} />
-          <div className="absolute bottom-[20%] right-[5%] w-[450px] h-[450px] rounded-full blur-[120px] animate-mesh-2" style={{ background: `rgba(112,26,117,var(--orb-opacity))` }} />
+          <div className="absolute top-[15%] left-[8%] w-[500px] h-[500px] rounded-full blur-[120px] animate-mesh-1" style={{ background: `rgba(255, 199, 44, var(--orb-opacity))` }} />
+          <div className="absolute bottom-[20%] right-[5%] w-[450px] h-[450px] rounded-full blur-[120px] animate-mesh-2" style={{ background: `rgba(74, 14, 23, var(--orb-opacity))` }} />
         </div>
         {/* Rings */}
         <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
-          <div className="absolute w-[600px] h-[600px] rounded-full animate-spin-slow" style={{ border: "1px solid rgba(217,119,6,0.06)" }} />
-          <div className="absolute w-[800px] h-[800px] rounded-full animate-spin-reverse" style={{ border: "1px solid rgba(112,26,117,0.04)" }} />
+          <div className="absolute w-[600px] h-[600px] rounded-full animate-spin-slow" style={{ border: "1px solid rgba(255, 199, 44, 0.06)" }} />
+          <div className="absolute w-[800px] h-[800px] rounded-full animate-spin-reverse" style={{ border: "1px solid rgba(74, 14, 23, 0.04)" }} />
         </div>
 
         <motion.div
@@ -93,7 +93,7 @@ export default function HomePage() {
           <motion.div initial={{ opacity: 0, y: -20, scale: 0.9 }} animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.6, type: "spring" }}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-10 border backdrop-blur-md text-xs font-bold tracking-wider"
-            style={{ borderColor: "rgba(217,119,6,0.3)", background: "rgba(217,119,6,0.1)", color: "#fbbf24" }}>
+            style={{ borderColor: "rgba(255, 199, 44, 0.3)", background: "rgba(255, 199, 44, 0.08)", color: "#FFC72C" }}>
             <Sparkles className="w-3.5 h-3.5 animate-pulse-glow-fast" />
             {settings.announcement}
             <Sparkles className="w-3.5 h-3.5 animate-pulse-glow-fast delay-300" />
@@ -103,7 +103,7 @@ export default function HomePage() {
           <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}
             className="text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight leading-[1.05] max-w-5xl" style={{ color: "var(--text-primary)" }}>
             Aesthetic Code &<br />
-            <span className="relative inline-block">Premium<span className="absolute -inset-1 bg-amber-500/10 blur-2xl rounded-2xl" /></span>{" "}
+            <span className="relative inline-block">Premium<span className="absolute -inset-1 bg-yellow-500/10 blur-2xl rounded-2xl" /></span>{" "}
             <Typewriter words={typewriterWords} />
           </motion.h1>
 
@@ -111,22 +111,22 @@ export default function HomePage() {
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.25 }}
             className="mt-8 text-lg sm:text-xl max-w-2xl leading-relaxed font-medium" style={{ color: "var(--text-secondary)" }}>
             A boutique digital studio blending high-end visual design with advanced engineering to craft{" "}
-            <span className="text-amber-400 font-semibold font-display">premium digital assets</span>.
+            <span className="text-yellow-400 font-semibold font-display">premium digital assets</span>.
           </motion.p>
 
           {/* CTAs */}
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-4 mt-12">
             <Link href="/contact">
-              <button className="group relative px-8 py-4 rounded-2xl font-bold text-black text-sm overflow-hidden bg-gradient-to-r from-yellow-500 to-amber-500 shadow-lg shadow-amber-500/20 hover:shadow-amber-500/40 hover:scale-105 active:scale-95 transition-all duration-300">
+              <button className="group relative px-8 py-4 rounded-2xl font-bold text-black text-sm overflow-hidden bg-gradient-to-r from-yellow-500 to-yellow-600 shadow-lg shadow-yellow-500/20 hover:shadow-yellow-500/40 hover:scale-105 active:scale-95 transition-all duration-300">
                 <span className="relative z-10 flex items-center gap-2">Craft With Us <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" /></span>
-                <div className="absolute inset-0 bg-gradient-to-r from-amber-500 to-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-r from-yellow-600 to-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </button>
             </Link>
             <Link href="/services">
               <button className="group px-8 py-4 rounded-2xl font-bold text-sm border backdrop-blur-sm hover:scale-105 active:scale-95 transition-all duration-300"
-                style={{ borderColor: "var(--border-subtle)", color: "var(--text-secondary)", background: "rgba(217,119,6,0.05)" }}>
-                <span className="flex items-center gap-2 hover:text-amber-400">View Services <Zap className="w-4 h-4 text-amber-400" /></span>
+                style={{ borderColor: "var(--border-subtle)", color: "var(--text-secondary)", background: "rgba(255, 199, 44, 0.05)" }}>
+                <span className="flex items-center gap-2 hover:text-yellow-400">View Services <Zap className="w-4 h-4 text-yellow-400" /></span>
               </button>
             </Link>
           </motion.div>
@@ -157,14 +157,13 @@ export default function HomePage() {
         </motion.div>
       </section>
 
-      {/* ══ Featured Projects Showcase ══ */}
       <section className="py-20 md:py-32 relative z-10 overflow-hidden border-t" style={{ borderColor: "var(--border-subtle)" }}>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full blur-[150px] pointer-events-none" style={{ background: `rgba(217,119,6,calc(var(--orb-opacity)*0.15))` }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full blur-[150px] pointer-events-none" style={{ background: `rgba(255, 199, 44, calc(var(--orb-opacity)*0.15))` }} />
         
         <div className="max-w-7xl mx-auto px-6">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             className="text-center mb-16 md:mb-24">
-            <p className="text-amber-500 text-[10px] sm:text-xs font-bold uppercase tracking-widest mb-3">Our Creations</p>
+            <p className="text-yellow-500 text-[10px] sm:text-xs font-bold uppercase tracking-widest mb-3">Our Creations</p>
             <h2 className="text-3xl sm:text-5xl font-black leading-tight" style={{ color: "var(--text-primary)" }}>Featured <span className="text-shimmer">Projects</span></h2>
           </motion.div>
 
@@ -182,7 +181,7 @@ export default function HomePage() {
                 >
                   {/* Project Info */}
                   <div className="w-full lg:w-1/2 flex flex-col items-start">
-                    <span className="text-[10px] font-bold tracking-widest uppercase text-amber-400 mb-3 px-3 py-1 rounded-full border border-amber-500/20 bg-amber-500/5">
+                    <span className="text-[10px] font-bold tracking-widest uppercase text-yellow-400 mb-3 px-3 py-1 rounded-full border border-yellow-500/20 bg-yellow-500/5">
                       {project.category}
                     </span>
                     <h3 className="text-2xl sm:text-4xl font-black mb-4 leading-tight" style={{ color: "var(--text-primary)" }}>
@@ -195,7 +194,7 @@ export default function HomePage() {
                     <div className="flex flex-wrap gap-2 mb-8">
                       {project.techUsed.map((tech) => (
                         <span key={tech} className="text-[10px] px-3 py-1 rounded-full border font-semibold"
-                          style={{ borderColor: "var(--border-subtle)", background: "rgba(251,191,36,0.03)", color: "var(--text-secondary)" }}>
+                          style={{ borderColor: "var(--border-subtle)", background: "rgba(255, 199, 44, 0.03)", color: "var(--text-secondary)" }}>
                           {tech}
                         </span>
                       ))}
@@ -205,8 +204,8 @@ export default function HomePage() {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-sm border hover:bg-amber-500 hover:text-black transition-all duration-300"
-                      style={{ borderColor: "rgba(217,119,6,0.3)", color: "var(--text-primary)" }}
+                      className="group flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-sm border hover:bg-yellow-500 hover:text-black transition-all duration-300 text-stone-900 border-stone-300"
+                      style={{ borderColor: "rgba(255, 199, 44, 0.3)", color: "var(--text-primary)" }}
                     >
                       Visit Live Project <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </a>
@@ -227,8 +226,8 @@ export default function HomePage() {
                           className="w-full h-auto object-cover max-h-[350px] sm:max-h-[400px] transition-transform duration-700 group-hover:scale-105"
                         />
                       ) : (
-                        <div className="aspect-video w-full flex items-center justify-center bg-gradient-to-br from-amber-950/40 via-purple-950/20 to-black p-8">
-                          <Code className="w-16 h-16 text-amber-500/30" />
+                        <div className="aspect-video w-full flex items-center justify-center bg-gradient-to-br from-yellow-950/40 via-red-950/20 to-black p-8">
+                          <Code className="w-16 h-16 text-yellow-500/30" />
                         </div>
                       )}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
@@ -245,16 +244,16 @@ export default function HomePage() {
 
       {/* ══ SERVICES ══ */}
       <section className="py-12 md:py-24 relative z-10 overflow-hidden border-t" style={{ borderColor: "var(--border-subtle)" }}>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full blur-[150px] pointer-events-none" style={{ background: `rgba(217,119,6,calc(var(--orb-opacity)*0.15))` }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full blur-[150px] pointer-events-none" style={{ background: `rgba(255, 199, 44, calc(var(--orb-opacity)*0.15))` }} />
         <div className="max-w-7xl mx-auto px-6">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             className="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-16">
             <div>
-              <p className="text-amber-500 text-[10px] sm:text-xs font-bold uppercase tracking-widest mb-2 sm:mb-3">Capabilities</p>
+              <p className="text-yellow-500 text-[10px] sm:text-xs font-bold uppercase tracking-widest mb-2 sm:mb-3">Capabilities</p>
               <h2 className="text-3xl sm:text-5xl font-black leading-tight" style={{ color: "var(--text-primary)" }}>What We <span className="text-shimmer">Build</span></h2>
             </div>
             <Link href="/services">
-              <button className="mt-6 md:mt-0 group flex items-center gap-2 px-5 py-2.5 rounded-xl border text-sm font-semibold hover:text-amber-400 transition-all"
+              <button className="mt-6 md:mt-0 group flex items-center gap-2 px-5 py-2.5 rounded-xl border text-sm font-semibold hover:text-yellow-500 transition-all border-stone-300"
                 style={{ borderColor: "var(--border-subtle)", color: "var(--text-secondary)", background: "transparent" }}>
                 View All <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
@@ -297,11 +296,11 @@ export default function HomePage() {
       {/* ══ CTA ══ */}
       <section className="py-28 relative z-10 overflow-hidden border-t" style={{ borderColor: "var(--border-subtle)" }}>
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div className="w-[600px] h-[600px] rounded-full blur-[150px] animate-pulse-glow" style={{ background: `rgba(217,119,6,var(--orb-opacity))` }} />
+          <div className="w-[600px] h-[600px] rounded-full blur-[150px] animate-pulse-glow" style={{ background: `rgba(255, 199, 44, var(--orb-opacity))` }} />
         </div>
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, type: "spring" }}>
-            <p className="text-amber-500 text-xs font-bold uppercase tracking-widest mb-6">Start a Project</p>
+            <p className="text-yellow-500 text-xs font-bold uppercase tracking-widest mb-6">Start a Project</p>
             <h2 className="text-5xl sm:text-6xl font-black leading-tight mb-6" style={{ color: "var(--text-primary)" }}>
               Got an Idea?<br /><span className="text-shimmer">Let's Build It.</span>
             </h2>
@@ -310,12 +309,12 @@ export default function HomePage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
-                <button className="group px-10 py-4 rounded-2xl font-bold text-black text-sm bg-gradient-to-r from-yellow-500 to-amber-500 shadow-xl shadow-amber-500/20 hover:shadow-amber-500/40 hover:scale-105 active:scale-95 transition-all duration-300">
+                <button className="group px-10 py-4 rounded-2xl font-bold text-white text-sm bg-stone-950 hover:bg-stone-900 shadow-xl shadow-stone-950/10 hover:scale-105 active:scale-95 transition-all duration-300">
                   <span className="flex items-center gap-2">Start a Conversation <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" /></span>
                 </button>
               </Link>
               <Link href="/about">
-                <button className="px-10 py-4 rounded-2xl font-bold text-sm border hover:border-amber-500/40 active:scale-95 transition-all duration-300"
+                <button className="px-10 py-4 rounded-2xl font-bold text-sm border hover:border-yellow-500/40 active:scale-95 transition-all duration-300 border-stone-300"
                   style={{ borderColor: "var(--border-subtle)", color: "var(--text-secondary)", background: "transparent" }}>
                   Meet the Team
                 </button>

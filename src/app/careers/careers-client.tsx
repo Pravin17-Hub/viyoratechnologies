@@ -13,10 +13,10 @@ const perks = [
   { icon: "🤝", title: "Flexible & Remote", text: "Balance your classes and code. Async-first, no rigid 9-to-5 schedules." },
 ];
 const rolesOpen = [
-  { role: "Frontend Developer",   tags: ["React", "Next.js", "CSS"],        color: "#8b5cf6" },
-  { role: "UI/UX Designer",       tags: ["Figma", "Framer", "Design Systems"], color: "#3b82f6" },
-  { role: "AI / ML Engineer",     tags: ["Python", "LangChain", "OpenAI"],  color: "#06b6d4" },
-  { role: "Backend Developer",    tags: ["Node.js", "Firebase", "APIs"],    color: "#ec4899" },
+  { role: "Frontend Developer",   tags: ["React", "Next.js", "CSS"],        color: "#FFC72C" },
+  { role: "UI/UX Designer",       tags: ["Figma", "Framer", "Design Systems"], color: "#FFD700" },
+  { role: "AI / ML Engineer",     tags: ["Python", "LangChain", "OpenAI"],  color: "#4a0e17" },
+  { role: "Backend Developer",    tags: ["Node.js", "Firebase", "APIs"],    color: "#9b1c2e" },
 ];
 
 export default function CareersPage() {
@@ -52,12 +52,12 @@ export default function CareersPage() {
       {/* ══ HERO ══ */}
       <section className="relative pt-32 pb-16 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] rounded-full blur-[150px]" style={{ background: `rgba(139,92,246,var(--orb-opacity))` }} />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] rounded-full blur-[150px]" style={{ background: `rgba(255, 199, 44, var(--orb-opacity))` }} />
         </div>
         <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
           <motion.span initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full border text-xs font-bold tracking-wider"
-            style={{ borderColor: "rgba(139,92,246,0.3)", background: "rgba(139,92,246,0.1)", color: "#a78bfa" }}>
+            style={{ borderColor: "rgba(255, 199, 44, 0.3)", background: "rgba(255, 199, 44, 0.08)", color: "#FFC72C" }}>
             <Sparkles className="w-3.5 h-3.5" />Join Our Studio
           </motion.span>
           <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
@@ -166,9 +166,9 @@ export default function CareersPage() {
                 <motion.form key="form" onSubmit={handleSubmit} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                   className="flex flex-col gap-5">
                   {[
-                    { label: <><User className="w-3.5 h-3.5 text-violet-400" /> Full Name</>, name: "name", type: "text", placeholder: "John Doe" },
-                    { label: <><Mail className="w-3.5 h-3.5 text-violet-400" /> Email ID</>, name: "email", type: "email", placeholder: "you@university.edu" },
-                    { label: <><Phone className="w-3.5 h-3.5 text-violet-400" /> Mobile Number</>, name: "mobile", type: "tel", placeholder: "+91 98765 43210" },
+                    { label: <><User className="w-3.5 h-3.5 text-yellow-500" /> Full Name</>, name: "name", type: "text", placeholder: "John Doe" },
+                    { label: <><Mail className="w-3.5 h-3.5 text-yellow-500" /> Email ID</>, name: "email", type: "email", placeholder: "you@university.edu" },
+                    { label: <><Phone className="w-3.5 h-3.5 text-yellow-500" /> Mobile Number</>, name: "mobile", type: "tel", placeholder: "+91 98765 43210" },
                   ].map(f => (
                     <div key={f.name} className="flex flex-col gap-1.5">
                       <label className="text-xs font-bold flex items-center gap-1.5" style={{ color: "var(--text-muted)" }}>{f.label}</label>
@@ -178,8 +178,8 @@ export default function CareersPage() {
                     </div>
                   ))}
                   {[
-                    { label: <><Code className="w-3.5 h-3.5 text-violet-400" /> Your Skills</>, name: "skills", placeholder: "React, Next.js, Figma, Python…" },
-                    { label: <><Link2 className="w-3.5 h-3.5 text-violet-400" /> Project Links & Repos</>, name: "projects", placeholder: "Figma files, live websites, project repos…" },
+                    { label: <><Code className="w-3.5 h-3.5 text-yellow-500" /> Your Skills</>, name: "skills", placeholder: "React, Next.js, Figma, Python…" },
+                    { label: <><Link2 className="w-3.5 h-3.5 text-yellow-500" /> Project Links & Repos</>, name: "projects", placeholder: "Figma files, live websites, project repos…" },
                   ].map(f => (
                     <div key={f.name} className="flex flex-col gap-1.5">
                       <label className="text-xs font-bold flex items-center gap-1.5" style={{ color: "var(--text-muted)" }}>{f.label}</label>
@@ -194,10 +194,10 @@ export default function CareersPage() {
                     </p>
                   )}
                   <button type="submit" disabled={isSubmitting}
-                    className="group relative w-full mt-2 py-4 rounded-2xl font-bold text-white text-sm overflow-hidden bg-gradient-to-r from-violet-600 to-blue-600 shadow-lg shadow-violet-500/25 hover:shadow-violet-500/40 hover:scale-[1.02] active:scale-95 transition-all duration-300 disabled:opacity-60 disabled:scale-100">
+                    className="group relative w-full mt-2 py-4 rounded-2xl font-bold text-black text-sm overflow-hidden bg-gradient-to-r from-yellow-500 to-yellow-600 shadow-lg shadow-yellow-500/20 hover:shadow-yellow-500/40 hover:scale-[1.02] active:scale-95 transition-all duration-300 disabled:opacity-60 disabled:scale-100">
                     <span className="relative z-10 flex items-center justify-center gap-2">
                       {isSubmitting ? (
-                        <><div className="w-4 h-4 rounded-full border-2 border-white/30 border-t-white animate-spin" />Submitting…</>
+                        <><div className="w-4 h-4 rounded-full border-2 border-black/30 border-t-black animate-spin" />Submitting…</>
                       ) : (
                         <>Submit Application <Send className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" /></>
                       )}

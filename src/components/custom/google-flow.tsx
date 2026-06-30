@@ -28,13 +28,12 @@ export function GoogleFlow() {
     let blobs: Blob[] = [];
     const mouse = { x: -1000, y: -1000, active: false };
 
-    // Setup premium brand colors matching MAK and Obsidian themes
     const colors = [
-      "rgba(251, 191, 36, 0.35)", // Liquid Gold
-      "rgba(217, 119, 6, 0.3)",   // Amber Gold
-      "rgba(88, 28, 135, 0.45)",  // Deep Purple
-      "rgba(112, 26, 117, 0.4)",  // Plum/Burgundy
-      "rgba(79, 70, 229, 0.25)",  // Indigo
+      "rgba(255, 199, 44, 0.35)",  // Golden Yellow
+      "rgba(74, 14, 23, 0.45)",    // Dark Maroon
+      "rgba(255, 215, 0, 0.3)",    // Light Golden Yellow
+      "rgba(92, 6, 18, 0.4)",      // Rich Maroon
+      "rgba(255, 199, 44, 0.25)",  // Golden Yellow
     ];
 
     const initBlobs = () => {

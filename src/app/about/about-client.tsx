@@ -8,10 +8,10 @@ import { PageWrapper } from "@/components/shared/page-wrapper";
 import Link from "next/link";
 
 const coreValues = [
-  { title: "Passion for Tech",       description: "We live and breathe frontend, backend, and AI. Building is what we love.",                               icon: <Sparkles className="w-6 h-6" />, color: "#fbbf24" },
-  { title: "Rapid Prototyping",      description: "From idea to MVP in weeks, not months. Speed is our superpower.",                                        icon: <Laptop className="w-6 h-6" />,   color: "#d97706" },
-  { title: "Peer Collaboration",     description: "Tight-knit teams, dynamic pair programming, and shared design vision.",                                  icon: <Users className="w-6 h-6" />,    color: "#701a75" },
-  { title: "Continuous Growth",      description: "We share knowledge, write OSS, and help each other level up.",                                           icon: <Heart className="w-6 h-6" />,    color: "#a21caf" },
+  { title: "Passion for Tech",       description: "We live and breathe frontend, backend, and AI. Building is what we love.",                               icon: <Sparkles className="w-6 h-6" />, color: "#FFC72C" },
+  { title: "Rapid Prototyping",      description: "From idea to MVP in weeks, not months. Speed is our superpower.",                                        icon: <Laptop className="w-6 h-6" />,   color: "#FFD700" },
+  { title: "Peer Collaboration",     description: "Tight-knit teams, dynamic pair programming, and shared design vision.",                                  icon: <Users className="w-6 h-6" />,    color: "#4a0e17" },
+  { title: "Continuous Growth",      description: "We share knowledge, write OSS, and help each other level up.",                                           icon: <Heart className="w-6 h-6" />,    color: "#9b1c2e" },
 ];
 
 export default function AboutPage() {
@@ -20,8 +20,8 @@ export default function AboutPage() {
       {/* ══ HERO ══ */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-1/4 w-[500px] h-[500px] rounded-full blur-[150px]" style={{ background: `rgba(217,119,6,var(--orb-opacity))` }} />
-          <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] rounded-full blur-[120px]" style={{ background: `rgba(112,26,117,calc(var(--orb-opacity)*0.7))` }} />
+          <div className="absolute top-0 left-1/4 w-[500px] h-[500px] rounded-full blur-[150px]" style={{ background: `rgba(255, 199, 44, var(--orb-opacity))` }} />
+          <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] rounded-full blur-[120px]" style={{ background: `rgba(74, 14, 23, calc(var(--orb-opacity)*0.7))` }} />
         </div>
         <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
           <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>

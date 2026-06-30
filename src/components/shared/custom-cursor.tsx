@@ -82,9 +82,9 @@ export function CustomCursor() {
           x: ringXSpring,
           y: ringYSpring,
           scale: hovered ? 1.6 : 1,
-          backgroundColor: hovered ? "rgba(251, 191, 36, 0.08)" : "rgba(251, 191, 36, 0.02)",
-          borderColor: hovered ? "rgba(251, 191, 36, 0.8)" : "rgba(251, 191, 36, 0.3)",
-          boxShadow: hovered ? "0 0 15px rgba(251, 191, 36, 0.4)" : "none",
+          backgroundColor: hovered ? "rgba(255, 199, 44, 0.08)" : "rgba(255, 199, 44, 0.02)",
+          borderColor: hovered ? "rgba(255, 199, 44, 0.8)" : "rgba(255, 199, 44, 0.3)",
+          boxShadow: hovered ? "0 0 15px rgba(255, 199, 44, 0.4)" : "none",
         }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
       />

@@ -75,13 +75,13 @@ export default function ContactPage() {
       {/* ══ HERO ══ */}
       <section className="relative pt-32 pb-16 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-1/4 w-[500px] h-[400px] rounded-full blur-[140px]" style={{ background: `rgba(59,130,246,var(--orb-opacity))` }} />
-          <div className="absolute top-0 right-1/4 w-[400px] h-[400px] rounded-full blur-[120px]" style={{ background: `rgba(139,92,246,calc(var(--orb-opacity)*0.7))` }} />
+          <div className="absolute top-0 left-1/4 w-[500px] h-[400px] rounded-full blur-[140px]" style={{ background: `rgba(255, 199, 44, var(--orb-opacity))` }} />
+          <div className="absolute top-0 right-1/4 w-[400px] h-[400px] rounded-full blur-[120px]" style={{ background: `rgba(74, 14, 23, calc(var(--orb-opacity)*0.7))` }} />
         </div>
         <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
           <motion.span initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full border text-xs font-bold tracking-wider"
-            style={{ borderColor: "rgba(139,92,246,0.3)", background: "rgba(139,92,246,0.1)", color: "#a78bfa" }}>
+            style={{ borderColor: "rgba(255, 199, 44, 0.3)", background: "rgba(255, 199, 44, 0.08)", color: "#FFC72C" }}>
             <MessageSquare className="w-3.5 h-3.5" />Get In Touch
           </motion.span>
           <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
@@ -137,7 +137,7 @@ export default function ContactPage() {
                       {errors.message && <span className="text-xs text-red-400">{errors.message}</span>}
                     </div>
                     <button type="submit"
-                      className="group mt-2 py-4 rounded-2xl font-bold text-white text-sm bg-gradient-to-r from-violet-600 to-blue-600 shadow-lg shadow-violet-500/25 hover:shadow-violet-500/40 hover:scale-[1.01] active:scale-95 transition-all duration-300">
+                      className="group mt-2 py-4 rounded-2xl font-bold text-black text-sm bg-gradient-to-r from-yellow-500 to-yellow-600 shadow-lg shadow-yellow-500/20 hover:shadow-yellow-500/40 hover:scale-[1.01] active:scale-95 transition-all duration-300">
                       <span className="flex items-center justify-center gap-2">
                         Send Message <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </span>
@@ -172,19 +172,19 @@ export default function ContactPage() {
               <Reveal>
                 <div className="p-6 rounded-3xl border" style={{ background: "var(--bg-card)", borderColor: "var(--border-card)" }}>
                   <h3 className="text-lg font-bold mb-5 flex items-center gap-2" style={{ color: "var(--text-primary)" }}>
-                    <Sparkles className="w-5 h-5 text-violet-400" />Direct Contact
+                    <Sparkles className="w-5 h-5 text-yellow-500" />Direct Contact
                   </h3>
                   <div className="flex flex-col gap-5">
                     {[
-                      { icon: <Mail className="w-5 h-5" />, label: "Email Address",  value: settings.email, href: `mailto:${settings.email}`, color: "#8b5cf6" },
-                      { icon: <Phone className="w-5 h-5" />, label: "Phone / Mobile", value: settings.phone, href: `tel:${settings.phone}`,    color: "#06b6d4" },
+                      { icon: <Mail className="w-5 h-5" />, label: "Email Address",  value: settings.email, href: `mailto:${settings.email}`, color: "#FFC72C" },
+                      { icon: <Phone className="w-5 h-5" />, label: "Phone / Mobile", value: settings.phone, href: `tel:${settings.phone}`,    color: "#FFD700" },
                     ].map(item => (
                       <div key={item.label} className="flex items-center gap-4">
                         <div className="w-11 h-11 rounded-2xl flex items-center justify-center flex-shrink-0 border border-white/10"
                           style={{ background: `${item.color}15`, color: item.color }}>{item.icon}</div>
                         <div>
                           <span className="text-[10px] font-bold uppercase tracking-wider block" style={{ color: "var(--text-muted)" }}>{item.label}</span>
-                          <a href={item.href} className="text-sm font-semibold hover:text-violet-500 transition-colors break-all" style={{ color: "var(--text-primary)" }}>
+                          <a href={item.href} className="text-sm font-semibold hover:text-yellow-500 transition-colors break-all" style={{ color: "var(--text-primary)" }}>
                             {item.value}
                           </a>
                         </div>
