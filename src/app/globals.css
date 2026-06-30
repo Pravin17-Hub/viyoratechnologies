@@ -4,18 +4,18 @@
   --font-sans: var(--font-plus-jakarta-sans), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-space-grotesk), sans-serif;
 
-  --color-brand-yellow: #5C7C89; /* Muted Slate Accent */
-  --color-brand-gold: #5C7C89;
-  --color-brand-maroon: #011425; /* Midnight Navy Base */
+  --color-brand-yellow: #B08401; /* Gold / Ochre Accent */
+  --color-brand-gold: #B08401;
+  --color-brand-maroon: #683B2B; /* Dark Brown Base */
 
   /* Override standard colors to conform to the custom color combo */
-  --color-yellow-400: #5C7C89;
-  --color-yellow-500: #5C7C89;
-  --color-yellow-600: #1F4959;
-  --color-amber-300: #5C7C89;
-  --color-amber-400: #5C7C89;
-  --color-amber-500: #5C7C89;
-  --color-amber-600: #1F4959;
+  --color-yellow-400: #B08401;
+  --color-yellow-500: #B08401;
+  --color-yellow-600: #D49E8D;
+  --color-amber-300: #B08401;
+  --color-amber-400: #B08401;
+  --color-amber-500: #B08401;
+  --color-amber-600: #D49E8D;
 
   --color-slate-350: #cbd5e1;
   --color-slate-455: #94a3b8;
@@ -26,40 +26,40 @@
   --color-slate-850: #1e293b;
 }
 
-/* ── Palette: White, Charcoal, Muted Slate, Deep Teal, Midnight Navy ── */
+/* ── Palette: Ochre Gold, Dusty Rose, Beige, Warm Off-white, Dark Brown ── */
 :root {
-  --bg-base:         #011425; /* Solid Midnight Navy Base */
-  --bg-surface:      #242424; /* Solid Charcoal Surface */
-  --bg-card:         #242424; /* Solid Charcoal Card */
-  --bg-card-hover:   #2c2c2c;
-  --border-card:     #5C7C89; /* Muted Slate Blue-Gray */
-  --border-subtle:   #1F4959; /* Deep Teal */
-  --text-primary:    #FFFFFF; /* Pure White */
-  --text-secondary:  #5C7C89; /* Muted Slate Blue-Gray */
-  --text-muted:      #FFFFFF; /* Pure White */
-  --navbar-bg:       #011425;
-  --footer-bg:       #000c17; /* Muted Dark Navy */
-  --input-bg:        #242424;
-  --input-border:    #1F4959;
-  --tab-bg:          #242424;
+  --bg-base:         #683B2B; /* Solid Dark Brown Base */
+  --bg-surface:      #542e21; /* Warm Brown Surface */
+  --bg-card:         #542e21; /* Warm Brown Card */
+  --bg-card-hover:   #5f3425;
+  --border-card:     #DED1BD; /* Beige Border */
+  --border-subtle:   #B08401; /* Ochre Gold */
+  --text-primary:    #FAF6F2; /* Warm Off-white */
+  --text-secondary:  #B08401; /* Ochre Gold */
+  --text-muted:      #FAF6F2; /* Warm Off-white */
+  --navbar-bg:       #683B2B;
+  --footer-bg:       #542e21;
+  --input-bg:        #542e21;
+  --input-border:    #B08401;
+  --tab-bg:          #542e21;
   --orb-opacity:     0; /* Disable gradients / glow combinations */
 }
 
 .dark {
-  --bg-base:         #011425;
-  --bg-surface:      #242424;
-  --bg-card:         #242424;
-  --bg-card-hover:   #2c2c2c;
-  --border-card:     #5C7C89;
-  --border-subtle:   #1F4959;
-  --text-primary:    #FFFFFF;
-  --text-secondary:  #5C7C89;
-  --text-muted:      #FFFFFF;
-  --navbar-bg:       #011425;
-  --footer-bg:       #000c17;
-  --input-bg:        #242424;
-  --input-border:    #1F4959;
-  --tab-bg:          #242424;
+  --bg-base:         #683B2B;
+  --bg-surface:      #542e21;
+  --bg-card:         #542e21;
+  --bg-card-hover:   #5f3425;
+  --border-card:     #DED1BD;
+  --border-subtle:   #B08401;
+  --text-primary:    #FAF6F2;
+  --text-secondary:  #B08401;
+  --text-muted:      #FAF6F2;
+  --navbar-bg:       #683B2B;
+  --footer-bg:       #542e21;
+  --input-bg:        #542e21;
+  --input-border:    #B08401;
+  --tab-bg:          #542e21;
   --orb-opacity:     0;
 }
 
@@ -83,14 +83,14 @@ h1, h2, h3, h4, h5, h6 {
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: var(--bg-base); }
 ::-webkit-scrollbar-thumb {
-  background: #5C7C89; /* Muted Slate Blue-Gray */
+  background: #B08401; /* Ochre Gold */
   border-radius: 9999px;
 }
 
 /* ── Selection ── */
 ::selection {
-  background: #1F4959; /* Deep Teal */
-  color: #FFFFFF;
+  background: #D49E8D; /* Dusty Rose */
+  color: #FAF6F2;
 }
 
 /* ── Disabled mesh animations ── */
@@ -120,7 +120,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ── Flat Solid Shimmer (no gradients) ── */
 .text-shimmer {
-  color: #5C7C89; /* Muted Slate Blue-Gray */
+  color: #B08401; /* Ochre Gold */
   background: none;
   -webkit-text-fill-color: initial;
   animation: none;
@@ -128,7 +128,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ── Flat Typewriter Text (no gradient shifts) ── */
 .animated-gradient-text {
-  color: #5C7C89; /* Muted Slate Blue-Gray */
+  color: #B08401; /* Ochre Gold */
   background: none;
   -webkit-text-fill-color: initial;
   animation: none;
@@ -141,8 +141,8 @@ h1, h2, h3, h4, h5, h6 {
 /* ── Flat Hero Grid ── */
 .hero-grid {
   background-image:
-    linear-gradient(rgba(92, 124, 137, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(92, 124, 137, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(176, 132, 1, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(176, 132, 1, 0.03) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 
