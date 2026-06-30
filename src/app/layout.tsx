@@ -18,59 +18,16 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: {
-    default: "Viyora Technologies | Software Development & AI Solutions",
-    template: "%s | Viyora Technologies"
-  },
-  description: "A premium software development and AI solutions product studio crafting web applications, SaaS platforms, and custom digital experiences.",
-  keywords: [
-    "Viyora Technologies",
-    "Software Development Company",
-    "Web Development Services",
-    "Mobile App Development",
-    "AI Solutions",
-    "SaaS Development",
-    "UI/UX Design",
-    "Custom Software Development",
-    "Digital Transformation"
-  ],
+  title: "Viyora Technologies | Product Development Studio",
+  description: "A student-led product studio crafting premium web apps, AI integrations, and digital experiences. Built fast. Built beautiful.",
   metadataBase: new URL("https://viyoratechnologies.com"),
-  alternates: {
-    canonical: "./",
-  },
   openGraph: {
-    title: "Viyora Technologies | Software Development & AI Solutions",
-    description: "A premium software development and AI solutions product studio crafting web applications, SaaS platforms, and custom digital experiences.",
+    title: "Viyora Technologies",
+    description: "A student-led product studio crafting premium web apps, AI integrations, and digital experiences.",
     type: "website",
     locale: "en_US",
-    url: "https://viyoratechnologies.com",
-    siteName: "Viyora Technologies",
-    images: [
-      {
-        url: "/logo.png",
-        width: 512,
-        height: 512,
-        alt: "Viyora Technologies Logo",
-      }
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Viyora Technologies | Software Development & AI Solutions",
-    description: "A premium software development and AI solutions product studio crafting web applications, SaaS platforms, and custom digital experiences.",
-    images: ["/logo.png"],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+    url: "https://viyoratechnologies.com"
+  }
 };
 
 export default function RootLayout({

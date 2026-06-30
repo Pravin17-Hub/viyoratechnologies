@@ -35,9 +35,17 @@ export function Navbar() {
   useEffect(() => { setIsMobileMenuOpen(false); }, [pathname]);
 
   /* Nav link color depends on theme AND scroll state */
-  const linkColor = "var(--text-primary)"; 
+  const linkColor = isScrolled
+    ? "var(--text-secondary)"
+    : theme === "dark"
+    ? "rgba(255,255,255,0.7)"
+    : "#334155"; // slate-700 for light unscrolled
 
-  const logoTextColor = "var(--text-primary)";
+  const logoTextColor = isScrolled
+    ? "var(--text-primary)"
+    : theme === "dark"
+    ? "#ffffff"
+    : "#0f172a";
 
   return (
     <header
@@ -54,8 +62,8 @@ export function Navbar() {
         className="absolute top-0 left-0 h-[2px] z-50 transition-all duration-100"
         style={{
           width: `${scrollProgress}%`,
-          background: "#FFC72C",
-          boxShadow: "0 0 10px rgba(255, 199, 44, 0.6)",
+          background: "linear-gradient(to right, #8b5cf6, #3b82f6, #06b6d4)",
+          boxShadow: "0 0 10px rgba(139,92,246,0.6)",
         }}
       />
 
@@ -68,7 +76,7 @@ export function Navbar() {
               <span className="text-lg sm:text-xl font-black tracking-wider" style={{ color: logoTextColor }}>
                 VIYORA
               </span>
-              <span className="text-[10px] sm:text-xs font-extrabold tracking-widest text-yellow-500 uppercase">
+              <span className="text-[10px] sm:text-xs font-extrabold tracking-widest text-violet-500 uppercase">
                 TECHNOLOGIES
               </span>
             </div>
@@ -83,21 +91,21 @@ export function Navbar() {
                   key={link.href}
                   href={link.href}
                   className="relative px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-300"
-                  style={{ color: isActive ? "#FFC72C" : linkColor }}
+                  style={{ color: isActive ? "#8b5cf6" : linkColor }}
                 >
                   {link.label}
                   {isActive && (
                     <motion.span
                       layoutId="activeNavBg"
-                      className="absolute inset-0 rounded-xl border border-yellow-500/20"
-                      style={{ background: "rgba(255, 199, 44, 0.08)" }}
+                      className="absolute inset-0 rounded-xl border border-violet-500/20"
+                      style={{ background: "rgba(139,92,246,0.1)" }}
                       transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
                   )}
                   {isActive && (
                     <motion.span
                       layoutId="activeNavDot"
-                      className="absolute -bottom-0.5 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-yellow-500"
+                      className="absolute -bottom-0.5 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-violet-500"
                       transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
                   )}
@@ -159,10 +167,10 @@ export function Navbar() {
                       href={link.href}
                       className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold transition-all"
                       style={isActive
-                        ? { background: "rgba(255, 199, 44, 0.08)", border: "1px solid rgba(255, 199, 44, 0.15)", color: "#FFC72C" }
+                        ? { background: "rgba(139,92,246,0.12)", border: "1px solid rgba(139,92,246,0.2)", color: "#8b5cf6" }
                         : { color: "var(--text-secondary)" }}
                     >
-                      {isActive && <span className="w-1.5 h-1.5 rounded-full bg-yellow-500 flex-shrink-0" />}
+                      {isActive && <span className="w-1.5 h-1.5 rounded-full bg-violet-500 flex-shrink-0" />}
                       {link.label}
                     </Link>
                   </motion.div>
