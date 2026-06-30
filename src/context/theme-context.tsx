@@ -59,43 +59,48 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       announcement: savedAnnouncement || "Viyora Technologies · Product Studio"
     });
 
-    // Projects sync with auto-upgrade to include MAK project
+    // Projects sync with auto-upgrade to include detailed MAK project
     const savedProjects = localStorage.getItem("viyora_projects");
     let loadedProjects = savedProjects ? JSON.parse(savedProjects) : [];
+    
+    const initialProjects: Project[] = [
+      {
+        id: "mak",
+        title: "MAK Ladies Tailoring",
+        category: "Bespoke Tailoring & Design",
+        description: "A premium bespoke digital experience crafted for MAK Ladies Tailoring. Features interactive design catalogs, dynamic high-resolution image galleries showcasing intricate Aari, Zardosi & stone embroidery handworks, a booking reservation system, and smooth custom page transitions.",
+        link: "https://mak-pied.vercel.app/",
+        techUsed: ["React 19", "Next.js 15", "Framer Motion", "Tailwind CSS", "Canvas Effects"],
+        image: "/mak-project.png"
+      },
+      {
+        id: "1",
+        title: "Aesthetic Portfolio & Brand Launch",
+        category: "Web Design",
+        description: "Designed a premium glassmorphic portfolio site with custom fluid animations for an early-stage consumer tech startup.",
+        link: "https://viyoratechnologies.com",
+        techUsed: ["React", "Next.js", "Framer Motion", "Tailwind CSS"]
+      },
+      {
+        id: "2",
+        title: "Digital Product Showcase",
+        category: "Web Development",
+        description: "Published a highly optimized Next.js template featuring pre-configured dark modes, animation controls, and custom layouts.",
+        link: "https://viyoratechnologies.com",
+        techUsed: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"]
+      }
+    ];
+
     const hasMak = loadedProjects.some((p: any) => p.id === "mak");
 
     if (!savedProjects || !hasMak) {
-      const initialProjects: Project[] = [
-        {
-          id: "mak",
-          title: "MAK Ladies Tailoring",
-          category: "Bespoke Tailoring & Design",
-          description: "A premium digital experience featuring high-end bespoke ladies' tailoring, intricate Aari & Zardosi embroidery showcases, interactive catalogs, and online bookings.",
-          link: "https://mak-pied.vercel.app/",
-          techUsed: ["React", "Next.js", "Framer Motion", "Tailwind CSS"],
-          image: "/mak-project.png"
-        },
-        {
-          id: "1",
-          title: "Aesthetic Portfolio & Brand Launch",
-          category: "Web Design",
-          description: "Designed a premium glassmorphic portfolio site with custom fluid animations for an early-stage consumer tech startup.",
-          link: "https://viyoratechnologies.com",
-          techUsed: ["React", "Next.js", "Framer Motion", "Tailwind CSS"]
-        },
-        {
-          id: "2",
-          title: "Digital Product Showcase",
-          category: "Web Development",
-          description: "Published a highly optimized Next.js template featuring pre-configured dark modes, animation controls, and custom layouts.",
-          link: "https://viyoratechnologies.com",
-          techUsed: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"]
-        }
-      ];
       setProjects(initialProjects);
       localStorage.setItem("viyora_projects", JSON.stringify(initialProjects));
     } else {
-      setProjects(loadedProjects);
+      // Auto-upgrade the MAK project in existing localStorage to the detailed version
+      const upgraded = loadedProjects.map((p: any) => p.id === "mak" ? initialProjects[0] : p);
+      setProjects(upgraded);
+      localStorage.setItem("viyora_projects", JSON.stringify(upgraded));
     }
     
     setMounted(true);

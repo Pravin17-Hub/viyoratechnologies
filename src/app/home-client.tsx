@@ -172,6 +172,92 @@ export default function HomePage() {
         </motion.div>
       </section>
 
+      {/* ══ Featured Projects Showcase ══ */}
+      <section className="py-20 md:py-32 relative z-10 overflow-hidden border-t" style={{ borderColor: "var(--border-subtle)" }}>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full blur-[150px] pointer-events-none" style={{ background: `rgba(139,92,246,calc(var(--orb-opacity)*0.1))` }} />
+        
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+            className="text-center mb-16 md:mb-24">
+            <p className="text-violet-500 text-[10px] sm:text-xs font-bold uppercase tracking-widest mb-3">Our Creations</p>
+            <h2 className="text-3xl sm:text-5xl font-black leading-tight" style={{ color: "var(--text-primary)" }}>Featured <span className="text-shimmer">Projects</span></h2>
+          </motion.div>
+
+          <div className="flex flex-col gap-20 md:gap-32">
+            {projects.map((project, idx) => {
+              const isEven = idx % 2 === 0;
+              return (
+                <motion.div
+                  key={project.id}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                  className={`flex flex-col lg:flex-row gap-8 lg:gap-16 items-center ${isEven ? "" : "lg:flex-row-reverse"}`}
+                >
+                  {/* Project Info */}
+                  <div className="w-full lg:w-1/2 flex flex-col items-start">
+                    <span className="text-[10px] font-bold tracking-widest uppercase text-violet-400 mb-3 px-3 py-1 rounded-full border border-violet-500/20 bg-violet-500/5">
+                      {project.category}
+                    </span>
+                    <h3 className="text-2xl sm:text-4xl font-black mb-4 leading-tight" style={{ color: "var(--text-primary)" }}>
+                      {project.title}
+                    </h3>
+                    <p className="text-sm sm:text-base leading-relaxed mb-6" style={{ color: "var(--text-secondary)" }}>
+                      {project.description}
+                    </p>
+                    
+                    <div className="flex flex-wrap gap-2 mb-8">
+                      {project.techUsed.map((tech) => (
+                        <span key={tech} className="text-[10px] px-3 py-1 rounded-full border font-semibold"
+                          style={{ borderColor: "var(--border-subtle)", background: "rgba(139,92,246,0.03)", color: "var(--text-secondary)" }}>
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-sm border hover:bg-violet-500 hover:text-white transition-all duration-300"
+                      style={{ borderColor: "rgba(139,92,246,0.3)", color: "var(--text-primary)" }}
+                    >
+                      Visit Live Project <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </a>
+                  </div>
+
+                  {/* Project Visual / Screenshot */}
+                  <div className="w-full lg:w-1/2">
+                    <motion.div
+                      whileHover={{ scale: 1.025 }}
+                      transition={{ duration: 0.4 }}
+                      className="relative overflow-hidden rounded-3xl border shadow-2xl group cursor-pointer"
+                      style={{ borderColor: "var(--border-card)", background: "rgba(20,10,30,0.5)" }}
+                    >
+                      {project.image ? (
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          className="w-full h-auto object-cover max-h-[350px] sm:max-h-[400px] transition-transform duration-700 group-hover:scale-105"
+                        />
+                      ) : (
+                        <div className="aspect-video w-full flex items-center justify-center bg-gradient-to-br from-violet-950/40 via-purple-950/20 to-black p-8">
+                          <Code className="w-16 h-16 text-violet-500/30" />
+                        </div>
+                      )}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span className="text-white text-xs font-bold uppercase tracking-wider">Explore Live ↗</span>
+                      </div>
+                    </motion.div>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* ══ SERVICES ══ */}
       <section className="py-12 md:py-24 relative z-10 overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full blur-[150px] pointer-events-none" style={{ background: `rgba(139,92,246,calc(var(--orb-opacity)*0.3))` }} />
