@@ -72,33 +72,19 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
         link: "https://mak-pied.vercel.app/",
         techUsed: ["React 19", "Next.js 15", "Framer Motion", "Tailwind CSS", "Canvas Effects"],
         image: "/mak-project.png"
-      },
-      {
-        id: "1",
-        title: "Aesthetic Portfolio & Brand Launch",
-        category: "Web Design",
-        description: "Designed a premium glassmorphic portfolio site with custom fluid animations for an early-stage consumer tech startup.",
-        link: "https://viyoratechnologies.com",
-        techUsed: ["React", "Next.js", "Framer Motion", "Tailwind CSS"]
-      },
-      {
-        id: "2",
-        title: "Digital Product Showcase",
-        category: "Web Development",
-        description: "Published a highly optimized Next.js template featuring pre-configured dark modes, animation controls, and custom layouts.",
-        link: "https://viyoratechnologies.com",
-        techUsed: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"]
       }
     ];
 
-    const hasMak = loadedProjects.some((p: any) => p.id === "mak");
+    // Filter out old fake projects from loaded storage if they exist
+    const filteredProjects = loadedProjects.filter((p: any) => p.id !== "1" && p.id !== "2");
+    const hasMak = filteredProjects.some((p: any) => p.id === "mak");
 
     if (!savedProjects || !hasMak) {
       setProjects(initialProjects);
       localStorage.setItem("viyora_projects", JSON.stringify(initialProjects));
     } else {
       // Auto-upgrade the MAK project in existing localStorage to the detailed version
-      const upgraded = loadedProjects.map((p: any) => p.id === "mak" ? initialProjects[0] : p);
+      const upgraded = filteredProjects.map((p: any) => p.id === "mak" ? initialProjects[0] : p);
       setProjects(upgraded);
       localStorage.setItem("viyora_projects", JSON.stringify(upgraded));
     }
