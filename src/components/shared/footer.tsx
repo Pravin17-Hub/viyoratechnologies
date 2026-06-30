@@ -34,8 +34,8 @@ export function Footer() {
 
   return (
     <footer className="w-full border-t relative z-10" style={{ background: "var(--footer-bg)", borderColor: "var(--border-subtle)" }}>
-      {/* Top gradient line */}
-      <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-amber-500/30 to-transparent" />
+      {/* Top solid line */}
+      <div className="h-[1px] w-full bg-yellow-500/20" />
 
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
@@ -47,7 +47,7 @@ export function Footer() {
                 <span className="text-lg sm:text-xl font-black tracking-wider" style={{ color: "var(--text-primary)" }}>
                   VIYORA
                 </span>
-                <span className="text-[10px] sm:text-xs font-extrabold tracking-widest text-amber-500 uppercase">
+                <span className="text-[10px] sm:text-xs font-extrabold tracking-widest text-yellow-500 uppercase">
                   TECHNOLOGIES
                 </span>
               </div>

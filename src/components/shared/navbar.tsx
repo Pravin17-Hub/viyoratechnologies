@@ -62,7 +62,7 @@ export function Navbar() {
         className="absolute top-0 left-0 h-[2px] z-50 transition-all duration-100"
         style={{
           width: `${scrollProgress}%`,
-          background: "linear-gradient(to right, #FFC72C, #FFD700, #4a0e17)",
+          background: "#FFC72C",
           boxShadow: "0 0 10px rgba(255, 199, 44, 0.6)",
         }}
       />
