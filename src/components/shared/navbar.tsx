@@ -68,7 +68,7 @@ export function Navbar() {
       />
 
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-20 relative">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group select-none">
             <img src="/logo.png" alt="VT Logo" className="h-9 sm:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
@@ -83,7 +83,7 @@ export function Navbar() {
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center gap-1 absolute left-1/2 -translate-x-1/2">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
